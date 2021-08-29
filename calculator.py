@@ -38,16 +38,16 @@ def add_point(result):
     result["text"] += "."
     
 #add operator function
-#add operator only if there is number or if its minus sign
+#add operator only if there is already one number or if its minus operator
 #if there is some calculation on then it willlbe calculated and the new
 #operation will be performed on the result of it
 def add_op(op, result):
-    if op != "-" and (result["text"] == "" or result["text"][-1] == "." or result["text"][-1] == " "):
+    if op != "-" and (result["text"] == "" or result["text"][-1] == " "):
         return
-    if result["text"] != "" and result["text"][-1] == ".":
+    elif result["text"] != "" and (result["text"][-1] == "." or result["text"][-1] == "-"):
         return
     calc(result)
-    if op == "-" and (result["text"] == "" or result["text"][-1] == " "):
+    if op == "-" and (result["text"] == "" or result["text"][-1] == " "or result["text"][-1] == "-"):
         result["text"] += "-"
     else:
         result["text"] += f" {op} "   
