@@ -4,6 +4,7 @@ import tkinter as tk
 my_font = ("Arial", 20)
 
 #clean all previous calculations
+#that made before
 def clean(result):
     result["text"] = ""
     
